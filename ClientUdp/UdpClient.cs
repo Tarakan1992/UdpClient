@@ -75,6 +75,7 @@ namespace ClientUdp
 					continue;
 				}
 
+				
 				return true;
 			}
 			return false;
@@ -113,7 +114,7 @@ namespace ClientUdp
 					Console.WriteLine(e.Message);
 					continue;
 				}
-				Console.WriteLine(BitConverter.ToInt32(bytes,0));
+				((IPEndPoint)_endPoint).Port = BitConverter.ToInt32(bytes, 0);
 				return true;
 			}
 
